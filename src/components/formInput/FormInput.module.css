@@ -1,0 +1,42 @@
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    max-width: 498px;
+    position: relative;
+}
+
+.label {
+    font-size: 14px;
+    opacity: 70%;
+}
+
+.input {
+    height: 54px;
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    border-radius: 6px;
+}
+
+.input::placeholder {
+    color: rgba(29, 29, 29, 0.4);
+}
+
+.interacted:invalid {
+    border: 1px solid #BE1F2A;
+}
+
+.long {
+    height: 157px;
+    font-family: inherit;
+}
+
+.invalidMarker {
+    color: #BE1F2A;
+    font-size: 14px;
+    position: absolute;
+    right: 22px;
+    bottom: 19px;
+}

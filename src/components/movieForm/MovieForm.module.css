@@ -1,0 +1,105 @@
+.form {
+    max-width: 1166px;
+    padding: 0 20px;
+    margin: 20px auto;
+    color: #1d1d1d;
+}
+
+.formHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-between;
+    margin-bottom: 112px;
+}
+
+.formName {
+    max-width: 564px;
+    font-size: 48px;
+    opacity: 0.66; 
+}
+
+.formContent {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 498px;
+}
+
+.leftColumn > :last-child {
+    margin-top: 22px;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+}
+
+.formFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 98px;
+}
+
+.button {
+    height: 48px;
+    border-radius: 24px;
+    padding: 0px 19px;
+    font-weight: normal;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid rgba(18, 19, 19, 0.12);
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
+
+.button:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;;
+}
+
+.button:disabled {
+    cursor: default;
+    border: none;
+    background-color: #EFEFEF;
+    color: #ACACAC;
+    box-shadow: none;
+}
+
+.abortButton {
+    margin-top: 26px;
+    width: 225px;
+}
+
+.proceedButton {
+    width: 248px;
+}
+
+
+@media (max-width: 630px) {
+    .formHeader {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .formName {
+        font-size: 36px;
+    }
+
+    .formContent {
+        flex-direction: column;
+    }
+
+    .leftColumn {
+        width: auto;
+    }
+}
