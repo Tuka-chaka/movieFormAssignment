@@ -19,6 +19,7 @@
     padding: 16px 18px;
     border: 1px solid rgba(0, 0, 0, 0.19);
     border-radius: 6px;
+    transition: border-color 0.5s ease;
 }
 
 .select:invalid {
@@ -30,11 +31,19 @@
 }
 
 .invalidMarker {
+    opacity: 0;
+    visibility: hidden;
     color: #BE1F2A;
     font-size: 14px;
     position: absolute;
     right: 22px;
     bottom: 19px;
+    transition: opacity 0.4s ease;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 100%
 }
 
 
