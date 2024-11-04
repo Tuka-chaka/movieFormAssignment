@@ -76,6 +76,13 @@ const MovieForm = () => {
         setIsInvalid(!formRef.current?.checkValidity())
     }, [formData])
 
+    useEffect(() => {
+        const retrievedFormData = JSON.parse(localStorage.getItem('formData') || '{}')
+        if (retrievedFormData) {
+            setFormData(retrievedFormData)
+        }
+    }, [])
+
     return (
     <form ref={formRef} className={styles.form}>
         <div className={styles.formHeader}>
@@ -91,7 +98,7 @@ const MovieForm = () => {
                 <FormInput value={formData.movieName} onChange={(value) => setFormData((formdata) => ({...formdata, movieName:value}))} label='Название проекта' placeholder='Название' isRequired/>
                 <Dropdown value={formData.genre} onChange={(value) => setFormData((formdata) => ({...formdata, genre:value}))} label='Жанр' placeholder='Жанр' options={genreOptions} isRequired/>
                 <Dropdown value={formData.format} onChange={(value) => setFormData((formdata) => ({...formdata, format:value}))} label='Формат (для онлайн-платформ, большого экрана, интернета, другое)' placeholder='Формат' options={formatOptions} isRequired/>
-                <FormInput value={formData.movieId} onChange={(value) => setFormData((formdata) => ({...formdata, movieId:value}))}  pattern='\d{3}-\d{3}-\d{3}-\d{2}-\d{3}' label='№ УНФ или отсутствует ' placeholder='890-000-000-00-000'/>
+                <FormInput value={formData.movieId} onChange={(value) => setFormData((formdata) => ({...formdata, movieId:value}))}  pattern='\d{3}-\d{3}-\d{3}-\d{2}-\d{3}' label='№ УНФ или отсутствует' placeholder='890-000-000-00-000'/>
             </div>
             <div className={styles.rightColumn}>
                 <Dropdown value={formData.country} onChange={(value) => setFormData((formdata) => ({...formdata, country:value}))} label='Страна-производитель (копродукция)' placeholder='Страна' options={countryOptions} isRequired/>
@@ -102,7 +109,7 @@ const MovieForm = () => {
         <div className={styles.formFooter}>
             <div className={styles.spacer}></div>
             <Pagination/>
-            <button disabled={isInvalid} className={`${styles.button} ${styles.proceedButton}`}>
+            <button onClick={() => localStorage.setItem('formData', JSON.stringify(formData))} disabled={isInvalid} className={`${styles.button} ${styles.proceedButton} ${helvetica.className}`}>
                 <span>Следующий шаг</span>
                 <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.13385 7.99999L17.2294 7.99999M17.2294 7.99999L10.3313 1.11252M17.2294 7.99999L10.3313 14.8875" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
