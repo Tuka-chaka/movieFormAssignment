@@ -31,10 +31,6 @@ const interTight = Inter_Tight({
     weight: ['600'],
 })
 
-const helvetica = localFont({
-    src: '../../app/fonts/Helvetica.ttf'
-})
-
 const helveticaNeue = localFont({
     src: '../../app/fonts/HelveticaNeueCyr-Roman.ttf'
 })
