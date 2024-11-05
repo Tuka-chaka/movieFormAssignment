@@ -78,6 +78,7 @@ const MovieForm = () => {
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault()
         localStorage.setItem('formData', JSON.stringify(formData))
+        console.log(formData)
         router.push(`/?step=${2}`)
     }
 
