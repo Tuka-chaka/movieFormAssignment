@@ -3,7 +3,7 @@ import StepPlaceholder from "@/components/stepPlaceholder/StepPlaceholder";
 
 
 type PageProps = {
-  searchParams?: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ step: string }>
 }
 
 export default async function Home({searchParams}: PageProps) {
