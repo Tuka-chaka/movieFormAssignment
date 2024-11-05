@@ -1,0 +1,23 @@
+.paginationWrapper {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+}
+
+.pageMarker {
+    width: 40px;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.current {
+    color: #000000;
+    border-radius: 50%;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+}

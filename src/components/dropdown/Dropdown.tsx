@@ -34,7 +34,13 @@ const Dropdown = ({label, placeholder, isRequired, options, value, onChange} : D
   return(
   <div className={styles.inputWrapper}>
     <label className={styles.label}>{label}</label>
-    <select ref={inputRef} onFocus={() => handleFocus()} onBlur={() => setIsFocused(false)} onChange={(e) => handleChange(e)} value={value} className={`${styles.select} ${interacted && !isFocused ? styles.interacted : ''}`} required={isRequired}>
+    <select ref={inputRef}
+        onFocus={() => handleFocus()}
+        onBlur={() => setIsFocused(false)}
+        onChange={(e) => handleChange(e)}
+        value={value}
+        className={`${styles.select} ${interacted && !isFocused ? styles.interacted : ''}`}
+        required={isRequired}>
         <option value="" disabled hidden>{placeholder}</option>
         {options.map(option => <option key={option} value={option}>{option}</option>)}
     </select>

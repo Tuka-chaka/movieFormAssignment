@@ -72,6 +72,12 @@ const MovieForm = () => {
         })
     }
 
+    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault()
+        localStorage.setItem('formData', JSON.stringify(formData))
+        alert('Данные сохранены, для проверки обновите страницу')
+    }
+
     useEffect(() => {
         setIsInvalid(!formRef.current?.checkValidity())
     }, [formData])
@@ -109,7 +115,7 @@ const MovieForm = () => {
         <div className={styles.formFooter}>
             <div className={styles.spacer}></div>
             <Pagination/>
-            <button onClick={() => localStorage.setItem('formData', JSON.stringify(formData))} disabled={isInvalid} className={`${styles.button} ${styles.proceedButton} ${helvetica.className}`}>
+            <button onClick={(e) => handleSubmit(e)} disabled={isInvalid} className={`${styles.button} ${styles.proceedButton} ${helvetica.className}`}>
                 <span>Следующий шаг</span>
                 <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.13385 7.99999L17.2294 7.99999M17.2294 7.99999L10.3313 1.11252M17.2294 7.99999L10.3313 14.8875" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

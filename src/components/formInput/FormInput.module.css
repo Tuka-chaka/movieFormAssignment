@@ -36,6 +36,7 @@
 }
 
 .invalidMarker {
+    user-select: none;
     opacity: 0;
     visibility: hidden;
     color: #BE1F2A;
