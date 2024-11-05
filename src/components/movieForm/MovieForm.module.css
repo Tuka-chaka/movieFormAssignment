@@ -126,4 +126,8 @@
     .spacer {
         display: none;
     }
+
+    .leftColumn > :last-child {
+        margin-top: 0px;
+    }
 }

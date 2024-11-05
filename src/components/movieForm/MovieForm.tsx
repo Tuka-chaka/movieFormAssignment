@@ -114,7 +114,7 @@ const MovieForm = () => {
         </div>
         <div className={styles.formFooter}>
             <div className={styles.spacer}></div>
-            <Pagination/>
+            <Pagination pageCount={4}/>
             <button onClick={(e) => handleSubmit(e)} disabled={isInvalid} className={`${styles.button} ${styles.proceedButton} ${helvetica.className}`}>
                 <span>Следующий шаг</span>
                 <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
