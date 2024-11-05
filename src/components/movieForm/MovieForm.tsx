@@ -8,6 +8,8 @@ import {Inter_Tight} from 'next/font/google'
 import localFont from 'next/font/local';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { countryOptions } from '../../exports'
+import FormButton from '../button/FormButton';
 
 const genreOptions = [
     'Артхаус',
@@ -22,13 +24,6 @@ const formatOptions = [
     'Большой экран',
     'Интернет',
     'Другое'
-]
-
-const countryOptions = [
-    'Россия',
-    'Лихтенштейн',
-    'Тринидад и Тобаго',
-    'Уругвай'
 ]
 
 const interTight = Inter_Tight({
@@ -99,9 +94,7 @@ const MovieForm = () => {
             <h1 className={`${styles.formName} ${interTight.className}`}>
                 Производственные параметры фильма
             </h1>
-            <button type='reset' onClick={(e) => handleReset(e)} className={`${styles.button} ${styles.abortButton} ${helvetica.className}`}>
-                Отменить заполнение
-            </button>
+            <FormButton type='reset' onClick={(e) => handleReset(e)} label='Отменить заполнение'/>
         </div>
         <div className={`${styles.formContent} ${helveticaNeue.className}`}>
             <div className={styles.leftColumn}>
@@ -119,12 +112,7 @@ const MovieForm = () => {
         <div className={styles.formFooter}>
             <div className={styles.spacer}></div>
             <Pagination onPageChange={(page) => console.log(page)} pageCount={4} currentPage={1}/>
-            <button onClick={(e) => handleSubmit(e)} disabled={isInvalid} className={`${styles.button} ${styles.proceedButton} ${helvetica.className}`}>
-                <span>Следующий шаг</span>
-                <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.13385 7.99999L17.2294 7.99999M17.2294 7.99999L10.3313 1.11252M17.2294 7.99999L10.3313 14.8875" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-            </button>
+            <FormButton type='submit' onClick={(e) => handleSubmit(e)} disabled={isInvalid} label='Следующий шаг'/>
         </div>
     </form>
   );

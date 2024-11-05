@@ -1,0 +1,42 @@
+.button {
+    height: 48px;
+    border-radius: 24px;
+    padding: 0px 19px;
+    font-weight: normal;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid rgba(18, 19, 19, 0.12);
+    transition: box-shadow 0.2s ease, background-color 0.5s ease, color 0.5s ease;
+    cursor: pointer;
+    text-wrap: nowrap;
+    color: rgba(29, 29, 29, 0.66);
+}
+
+.button:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;;
+}
+
+.button:disabled {
+    cursor: default;
+    border: 1px solid #EFEFEF;
+    background-color: #EFEFEF;
+    color: #ACACAC;
+    box-shadow: none;
+}
+
+.abortButton {
+    margin-top: 26px;
+    width: 225px;
+}
+
+.proceedButton {
+    width: 248px;
+    position: relative;
+}
+
+.proceedButton svg {
+    position: absolute;
+    right: 23px;
+    top: 17px;
+    stroke: currentColor;
+}
