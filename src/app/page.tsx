@@ -1,5 +1,4 @@
 import MovieForm from "@/components/movieForm/MovieForm";
-import styles from "./page.module.css";
 import StepPlaceholder from "@/components/stepPlaceholder/StepPlaceholder";
 
 
