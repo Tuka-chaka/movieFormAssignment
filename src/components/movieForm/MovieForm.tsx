@@ -7,19 +7,7 @@ import styles from './MovieForm.module.css'
 import {Inter_Tight} from 'next/font/google'
 import localFont from 'next/font/local';
 import { useEffect, useRef, useState } from 'react';
-
-const interTight = Inter_Tight({
-    subsets: ['cyrillic'],
-    weight: ['600'],
-})
-
-const helvetica = localFont({
-    src: '../../app/fonts/Helvetica.ttf'
-})
-
-const helveticaNeue = localFont({
-    src: '../../app/fonts/HelveticaNeueCyr-Roman.ttf'
-})
+import { useRouter } from 'next/navigation';
 
 const genreOptions = [
     'Артхаус',
@@ -43,7 +31,22 @@ const countryOptions = [
     'Уругвай'
 ]
 
+const interTight = Inter_Tight({
+    subsets: ['cyrillic'],
+    weight: ['600'],
+})
+
+const helvetica = localFont({
+    src: '../../app/fonts/Helvetica.ttf'
+})
+
+const helveticaNeue = localFont({
+    src: '../../app/fonts/HelveticaNeueCyr-Roman.ttf'
+})
+
 const MovieForm = () => {
+
+    const router = useRouter()
 
     const formRef = useRef<HTMLFormElement>(null)
 
@@ -75,7 +78,7 @@ const MovieForm = () => {
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault()
         localStorage.setItem('formData', JSON.stringify(formData))
-        alert('Данные сохранены, для проверки обновите страницу')
+        router.push(`/?step=${2}`)
     }
 
     useEffect(() => {
@@ -114,7 +117,7 @@ const MovieForm = () => {
         </div>
         <div className={styles.formFooter}>
             <div className={styles.spacer}></div>
-            <Pagination pageCount={4}/>
+            <Pagination onPageChange={(page) => console.log(page)} pageCount={4} currentPage={1}/>
             <button onClick={(e) => handleSubmit(e)} disabled={isInvalid} className={`${styles.button} ${styles.proceedButton} ${helvetica.className}`}>
                 <span>Следующий шаг</span>
                 <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">

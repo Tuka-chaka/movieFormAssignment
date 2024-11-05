@@ -1,0 +1,11 @@
+.layout {
+    max-width: 1166px;
+    padding: 0 20px;
+    margin: 20px auto;
+    color: #1d1d1d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+}

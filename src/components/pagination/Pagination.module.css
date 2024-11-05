@@ -17,6 +17,10 @@
     font-size: 14px;
 }
 
+.pageMarker svg {
+    margin-top: 4px;
+}
+
 .current {
     color: #000000;
     border-radius: 50%;

@@ -1,10 +1,22 @@
 import MovieForm from "@/components/movieForm/MovieForm";
 import styles from "./page.module.css";
+import StepPlaceholder from "@/components/stepPlaceholder/StepPlaceholder";
 
-export default function Home() {
+
+type PageProps = {
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
+
+export default async function Home({searchParams}: PageProps) {
+
+  const currSearchParams = await searchParams;
+
+  const step = parseInt(currSearchParams!['step'] as string ?? '1')
+
+  if (step === 1)
   return (
-    <div className={styles.page}>
       <MovieForm/>
-    </div>
   );
+
+  else return <StepPlaceholder/>
 }
